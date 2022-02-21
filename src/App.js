@@ -39,7 +39,7 @@ import PhotoCameraRoundedIcon from "@material-ui/icons/PhotoCameraRounded";const
               <img src={source} alt={"snap"} className={classes.img}></img>
             </Box>}
           <input
-            accept="image/*"
+            accept="video/*"
             className={classes.input}
             id="icon-button-file"
             type="file"
