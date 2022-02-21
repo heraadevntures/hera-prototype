@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/hera-prototype/static/css/main.073c9b0a.css",
+    "main.js": "/hera-prototype/static/js/main.d44bd64d.js",
+    "static/js/787.7fa48204.chunk.js": "/hera-prototype/static/js/787.7fa48204.chunk.js",
+    "static/media/logo.svg": "/hera-prototype/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/hera-prototype/index.html",
+    "main.073c9b0a.css.map": "/hera-prototype/static/css/main.073c9b0a.css.map",
+    "main.d44bd64d.js.map": "/hera-prototype/static/js/main.d44bd64d.js.map",
+    "787.7fa48204.chunk.js.map": "/hera-prototype/static/js/787.7fa48204.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.d44bd64d.js"
+  ]
+}
