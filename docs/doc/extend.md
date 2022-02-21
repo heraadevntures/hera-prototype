@@ -1,118 +1,76 @@
-[Mobile Boilerplate homepage](http://html5boilerplate.com/mobile/) | [Documentation
-table of contents](README.md)
+[HTML5 Boilerplate homepage](https://html5boilerplate.com) | [Documentation
+table of contents](TOC.md)
 
-# Extend and customise Mobile Boilerplate
+# Extend and customise HTML5 Boilerplate
 
-Here is some useful advice for how you can make your project with Mobile Boilerplate even better. We don't want to include it all by default, as not everything fits with everyone's needs.
+Here is some useful advice for how you can make your project with HTML5
+Boilerplate even better. We don't want to include it all by default, as not
+everything fits with everyone's needs.
 
-## Web Server Configuration
+* [App Stores](#app-stores)
+* [DNS prefetching](#dns-prefetching)
+* [Google Universal Analytics](#google-universal-analytics)
+* [Internet Explorer](#internet-explorer)
+* [Miscellaneous](#miscellaneous)
+* [News Feeds](#news-feeds)
+* [Search](#search)
+* [Social Networks](#social-networks)
+* [URLs](#urls)
+* [Web Apps](#web-apps)
+* [security.txt](#security.txt)
 
-### Transcoding Prevention
+## App Stores
 
-Many mobile network operators implemented "content transcoders" or "transcoding proxies" (Vodafone and TeliaSonera are among them). These content transcoders make the desktop web available on mobile devices. One of the side effects is that, already mobile optimized portals are also reformatted, destroying a carefully designed mobile user experience.
+### Smart App Banners in iOS 6+ Safari
 
-The line of code below in the .htaccess file could prevent content transcoders from altering your mobile web content.
+Stop bothering everyone with gross modals advertising your entry in the App
+Store. Including the following [meta
+tag](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/PromotingAppswithAppBanners/PromotingAppswithAppBanners.html)
+will unobtrusively give the user the option to download your iOS app, or open it
+with some data about the user's current state on the website.
 
-`Cache-Control: no-transform`
-
-Read more at the articles below:
-[http://mobiforge.com/developing/blog/responsible-reformatting](http://mobiforge.com/developing/blog/responsible-reformatting)
-[http://mobiforge.com/developing/story/setting-http-headers-advise-transcoding-proxies](http://mobiforge.com/developing/story/setting-http-headers-advise-transcoding-proxies)
-
-### Server side redirection script
-
-Server side mobile redirection script is added at the bottom of the page to detect if user is viewing from mobile device. This is taken from [detect mobile browser](http://detectmobilebrowser.com/). If the script detects the user is viewing from mobile phone, they will be redirected to the mobile version of the site.
-
-Usage Instruction:
-1. This is by default commented out, so to use it, you have to uncomment the lines below.
-2. change the last line http://www.example.com/mobile to the URL of your mobile site.
-
-```apache
-#RewriteEngine On
-#RewriteBase /
-#RewriteCond %{HTTP_USER_AGENT} android|avantgo|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge\ |maemo|midp|mmp|opera\ m(ob|in)i|palm(\ os)?|phone|p(ixi|re)\/|plucker|pocket|psp|symbian|treo|up\.(browser|link)|vodafone|wap|windows\ (ce|phone)|xda|xiino [NC,OR]
-#RewriteCond %{HTTP_USER_AGENT} ^(1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a\ wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r\ |s\ )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1\ u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp(\ i|ip)|hs\-c|ht(c(\-|\ |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac(\ |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt(\ |\/)|klon|kpt\ |kwc\-|kyo(c|k)|le(no|xi)|lg(\ g|\/(k|l|u)|50|54|e\-|e\/|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(di|rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-|\ |o|v)|zz)|mt(50|p1|v\ )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v\ )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-|\ )|webc|whit|wi(g\ |nc|nw)|wmlb|wonu|x700|xda(\-|2|g)|yas\-|your|zeto|zte\-) [NC]
-# RewriteRule ^$ http://www.example.com/mobile [R,L]
+```html
+<meta name="apple-itunes-app" content="app-id=APP_ID,app-argument=SOME_TEXT">
 ```
-
-One thing to note is that if you want to allow the user on the mobile version of your site to have the option to switch to desktop version, you may consider using another method like JavaScript or PHP. There is a list of other language support you can consider using:
-ASP, ASP.NET, ColdFusion, C#, IIS, JSP, JavaScript, jQuery, nginx, node.js, PHP, Perl, Python, Rails.
-
-### Mobile MIME Types
-
-There are device specific MIME types made by various mobile vendors. Files with these extensions may not get rendered with the right MIME type by the server.
-
-Here is a list of file extensions that are not supported by default.
-
-```apache
-# Blackberry types
-
-AddType application/x-bb-appworld      bbaw
-AddType text/vnd.rim.location.xloc     xloc
-
-# Nokia types
-
-AddType application/octet-stream            sisx
-AddType application/vnd.symbian.install     sis
-AddType application/java-archive            jar
-AddType application/x-java-archive          jar
-AddType text/vnd.sun.j2me.app-descriptor    jad
-```
-
-* [Apache configuration for mobile application download](https://bit.ly/SJJCND)
-* [How to enable OTA (Over The Air) SIS install from your website](https://bit.ly/ORTLLA)
 
 ## DNS prefetching
 
 In short, DNS Prefetching is a method of informing the browser of domain names
 referenced on a site so that the client can resolve the DNS for those hosts,
-cache them, and when it comes time to use them, have a faster turn around on
-the request.
+cache them, and when it comes time to use them, have a faster turn around on the
+request.
 
 ### Implicit prefetches
 
 There is a lot of prefetching done for you automatically by the browser. When
 the browser encounters an anchor in your html that does not share the same
 domain name as the current location the browser requests, from the client OS,
-the IP address for this new domain. The client first checks its cache and
-then, lacking a cached copy, makes a request from a DNS server. These requests
-happen in the background and are not meant to block the rendering of the
-page.
+the IP address for this new domain. The client first checks its cache and then,
+lacking a cached copy, makes a request from a DNS server. These requests happen
+in the background and are not meant to block the rendering of the page.
 
 The goal of this is that when the foreign IP address is finally needed it will
 already be in the client cache and will not block the loading of the foreign
-content. Less requests result in faster page load times. The perception of this
+content. Fewer requests result in faster page load times. The perception of this
 is increased on a mobile platform where DNS latency can be greater.
-
-#### Disable implicit prefetching
-
-```html
-<meta http-equiv="x-dns-prefetch-control" content="off">
-```
-
-Even with X-DNS-Prefetch-Control meta tag (or http header) browsers will still
-prefetch any explicit dns-prefetch links.
-
-**_WARNING:_** THIS MAY MAKE YOUR SITE SLOWER IF YOU RELY ON RESOURCES FROM
-FOREIGN DOMAINS.
 
 ### Explicit prefetches
 
 Typically the browser only scans the HTML for foreign domains. If you have
-resources that are outside of your HTML (a javascript request to a remote
-server or a CDN that hosts content that may not be present on every page of
-your site, for example) then you can queue up a domain name to be prefetched.
+resources that are outside of your HTML (a javascript request to a remote server
+or a CDN that hosts content that may not be present on every page of your site,
+for example) then you can queue up a domain name to be prefetched.
 
 ```html
 <link rel="dns-prefetch" href="//example.com">
-<link rel="dns-prefetch" href="//ajax.googleapis.com">
+<link rel="dns-prefetch" href="https://ajax.googleapis.com">
 ```
 
 You can use as many of these as you need, but it's best if they are all
 immediately after the [Meta
-Charset](https://developer.mozilla.org/en/HTML/Element/meta#attr-charset)
-element (which should go right at the top of the `head`), so the browser can
-act on them ASAP.
+Charset](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset)
+element (which should go right at the top of the `head`), so the browser can act
+on them ASAP.
 
 #### Common Prefetch Links
 
@@ -125,7 +83,7 @@ Amazon S3:
 Google APIs:
 
 ```html
-<link rel="dns-prefetch" href="//ajax.googleapis.com">
+<link rel="dns-prefetch" href="https://ajax.googleapis.com">
 ```
 
 Microsoft Ajax Content Delivery Network:
@@ -135,27 +93,211 @@ Microsoft Ajax Content Delivery Network:
 <link rel="dns-prefetch" href="//ajax.aspnetcdn.com">
 ```
 
-### Browser support for DNS prefetching
-
-Chrome, Firefox 3.5+, Safari 5+, Opera (Unknown), IE 9 (called "Pre-resolution"
-on blogs.msdn.com)
-
 ### Further reading about DNS prefetching
 
-* https://developer.mozilla.org/En/Controlling_DNS_prefetching
+* https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-DNS-Prefetch-Control
 * https://dev.chromium.org/developers/design-documents/dns-prefetching
-* http://blogs.msdn.com/b/ie/archive/2011/03/17/internet-explorer-9-network-performance-improvements.aspx
-* http://dayofjs.com/videos/22158462/web-browsers_alex-russel
+* https://docs.microsoft.com/en-us/archive/blogs/ie/internet-explorer-9-network-performance-improvements
 
+## Google Universal Analytics
+
+### More tracking settings
+
+The [optimized Google Universal Analytics
+snippet](https://mathiasbynens.be/notes/async-analytics-snippet#universal-analytics)
+included with HTML5 Boilerplate includes something like this:
+
+```js
+ga('create', 'UA-XXXXX-X', 'auto'); ga('send', 'pageview');
+```
+
+To customize further, see Google's [Advanced
+Setup](https://developers.google.com/analytics/devguides/collection/analyticsjs/),
+[Pageview](https://developers.google.com/analytics/devguides/collection/analyticsjs/pages),
+and
+[Event](https://developers.google.com/analytics/devguides/collection/analyticsjs/events)
+Docs.
+
+### Track jQuery AJAX requests in Google Analytics
+
+An article by @JangoSteve explains how to [track jQuery AJAX requests in Google
+Analytics](https://www.alfajango.com/blog/track-jquery-ajax-requests-in-google-analytics/).
+
+Add this to `plugins.js`:
+
+```js
+/*
+ * Log all jQuery AJAX requests to Google Analytics
+ * See: https://www.alfajango.com/blog/track-jquery-ajax-requests-in-google-analytics/
+ */
+if (typeof ga !== "undefined" && ga !== null) {
+    $(document).ajaxSend(function(event, xhr, settings){
+        ga('send', 'pageview', settings.url);
+    });
+}
+```
+
+### Track JavaScript errors in Google Analytics
+
+Add this function after `ga` is defined:
+
+```js
+(function(window){
+    var undefined,
+        link = function (href) {
+            var a = window.document.createElement('a');
+            a.href = href;
+            return a;
+        };
+    window.onerror = function (message, file, line, column) {
+        var host = link(file).hostname;
+        ga('send', {
+          'hitType': 'event',
+          'eventCategory': (host == window.location.hostname || host == undefined || host == '' ? '' : 'external ') + 'error',
+          'eventAction': message,
+          'eventLabel': (file + ' LINE: ' + line + (column ? ' COLUMN: ' + column : '')).trim(),
+          'nonInteraction': 1
+        });
+    };
+}(window));
+```
+
+### Track page scroll
+
+Add this function after `ga` is defined. Note, the following snippet requires jQuery.
+
+```js
+$(function(){
+    var isDuplicateScrollEvent,
+        scrollTimeStart = new Date,
+        $window = $(window),
+        $document = $(document),
+        scrollPercent;
+
+    $window.scroll(function() {
+        scrollPercent = Math.round(100 * ($window.height() + $window.scrollTop())/$document.height());
+        if (scrollPercent > 90 && !isDuplicateScrollEvent) { //page scrolled to 90%
+            isDuplicateScrollEvent = 1;
+            ga('send', 'event', 'scroll',
+                'Window: ' + $window.height() + 'px; Document: ' + $document.height() + 'px; Time: ' + Math.round((new Date - scrollTimeStart )/1000,1) + 's'
+            );
+        }
+    });
+});
+```
+
+## Internet Explorer
+
+### IE Pinned Sites
+
+Enabling your application for pinning will allow IE users to add it to their
+Windows Taskbar and Start Menu. This comes with a range of new tools that you
+can easily configure with the elements below. See more [documentation on IE
+Pinned
+Sites](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/samples/gg491731(v%3dvs.85)).
+
+### Name the Pinned Site for Windows
+
+Without this rule, Windows will use the page title as the name for your
+application.
+
+```html
+<meta name="application-name" content="Sample Title">
+```
+
+### Give your Pinned Site a tooltip
+
+You know — a tooltip. A little textbox that appears when the user holds their
+mouse over your Pinned Site's icon.
+
+```html
+<meta name="msapplication-tooltip" content="A description of what this site does.">
+```
+
+### Set a default page for your Pinned Site
+
+If the site should go to a specific URL when it is pinned (such as the
+homepage), enter it here. One idea is to send it to a special URL so you can
+track the number of pinned users, like so:
+`https://www.example.com/index.html?pinned=true`
+
+```html
+<meta name="msapplication-starturl" content="https://www.example.com/index.html?pinned=true">
+```
+
+### Recolor IE's controls manually for a Pinned Site
+
+IE will automatically use the overall color of your Pinned Site's favicon to
+shade its browser buttons. UNLESS you give it another color here. Only use named
+colors (`red`) or hex colors (`#ff0000`).
+
+```html
+<meta name="msapplication-navbutton-color" content="#ff0000">
+```
+
+### Manually set the window size of a Pinned Site
+
+If the site should open at a certain window size once pinned, you can specify
+the dimensions here. It only supports static pixel dimensions. 800x600 minimum.
+
+```html
+<meta name="msapplication-window" content="width=800;height=600">
+```
+
+### Jump List "Tasks" for Pinned Sites
+
+Add Jump List Tasks that will appear when the Pinned Site's icon gets a
+right-click. Each Task goes to the specified URL, and gets its own mini icon
+(essentially a favicon, a 16x16 .ICO). You can add as many of these as you need.
+
+```html
+<meta name="msapplication-task" content="name=Task 1;action-uri=http://host/Page1.html;icon-uri=http://host/icon1.ico">
+<meta name="msapplication-task" content="name=Task 2;action-uri=http://microsoft.com/Page2.html;icon-uri=http://host/icon2.ico">
+```
+
+### (Windows 8) High quality visuals for Pinned Sites
+
+Windows 8 adds the ability for you to provide a PNG tile image and specify the
+tile's background color. [Full details on the IE
+blog](https://docs.microsoft.com/en-us/archive/blogs/ie/high-quality-visuals-for-pinned-sites-in-windows-8).
+
+* Create a 144x144 image of your site icon, filling all of the canvas, and using
+  a transparent background.
+* Save this image as a 32-bit PNG and optimize it without reducing colour-depth.
+  It can be named whatever you want (e.g. `metro-tile.png`).
+* To reference the tile and its color, add the HTML `meta` elements described in
+  the IE Blog post.
+
+### (Windows 8) Badges for Pinned Sites
+
+IE will poll an XML document for badge information to display on your app's tile
+in the Start screen. The user will be able to receive these badge updates even
+when your app isn't actively running. The badge's value can be a number, or one
+of a predefined list of glyphs.
+
+* [Tutorial on IEBlog with link to badge XML
+schema](https://docs.microsoft.com/en-us/archive/blogs/ie/pinned-sites-in-windows-8)
+* [Available badge
+  values](https://docs.microsoft.com/en-us/uwp/schemas/tiles/badgeschema/element-badge)
+
+```html
+<meta name="msapplication-badge" value="frequency=NUMBER_IN_MINUTES;polling-uri=https://www.example.com/path/to/file.xml">
+```
 
 ## Search
 
 ### Direct search spiders to your sitemap
 
-[Learn how to make a sitemap](http://www.sitemaps.org/protocol.html)
+After creating a [sitemap](https://www.sitemaps.org/protocol.html)
 
-```html
-<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+Submit it to search engine tool:
+* [Google](https://www.google.com/webmasters/tools/sitemap-list)
+* [Bing](https://www.bing.com/toolbox/webmaster)
+* [Yandex](https://webmaster.yandex.com/)
+* [Baidu](https://zhanzhang.baidu.com/) OR Insert the following line anywhere in
+  your robots.txt file, specifying the path to your sitemap:
+```
+Sitemap: https://example.com/sitemap_location.xml
 ```
 
 ### Hide pages from search engines
@@ -170,176 +312,274 @@ value your sanity. This is an HTML-centric way of achieving that.
 
 **_WARNING:_** DO NOT INCLUDE ON PAGES THAT SHOULD APPEAR IN SEARCH ENGINES.
 
+### Firefox and IE Search Plugins
+
+Sites with in-site search functionality should be strongly considered for a
+browser search plugin. A "search plugin" is an XML file which defines how your
+plugin behaves in the browser. [How to make a browser search
+plugin](https://www.google.com/search?ie=UTF-8&q=how+to+make+browser+search+plugin).
+
+```html
+<link rel="search" title="" type="application/opensearchdescription+xml" href="">
+```
+
+
+## Miscellaneous
+
+* Use
+  [polyfills](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills).
+
+* Use [Microformats](http://microformats.org/wiki/Main_Page) (via
+  [microdata](http://microformats.org/wiki/microdata)) for optimum search
+  results
+  [visibility](https://webmasters.googleblog.com/2009/05/introducing-rich-snippets.html).
+
+* If you want to disable the translation prompt in Chrome or block Google
+  Translate from translating your web page, use [`<meta name="google"
+  content="notranslate">`](https://support.google.com/webmasters/answer/79812).
+  To disable translation for a particular section of the web page, add
+  [`class="notranslate"`](https://support.google.com/translate/?hl=en#2641276).
+
+* If you want to disable the automatic detection and formatting of possible
+  phone numbers in Safari on iOS, use [`<meta name="format-detection"
+  content="telephone=no">`](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html).
+
+* Avoid development/stage websites "leaking" into SERPs (search engine results
+  page) by [implementing X-Robots-tag
+  headers](https://github.com/h5bp/html5-boilerplate/issues/804).
+
+
+## News Feeds
+
+### RSS
+
+Have an RSS feed? Link to it here. Want to [learn how to write an RSS feed from
+scratch](https://www.rssboard.org/rss-specification)?
+
+```html
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+```
+
+### Atom
+
+Atom is similar to RSS, and you might prefer to use it instead of or in addition
+to it. [See what Atom's all
+about](https://en.wikipedia.org/wiki/Atom_(Web_standard)).
+
+```html
+<link rel="alternate" type="application/atom+xml" title="Atom" href="/atom.xml">
+```
+
+### Pingbacks
+
+Your server may be notified when another site links to yours. The href attribute
+should contain the location of your pingback service.
+
+```html
+<link rel="pingback" href="">
+```
+
+* High-level explanation:
+  https://codex.wordpress.org/Introduction_to_Blogging#Pingbacks
+* Step-by-step example case:
+  https://www.hixie.ch/specs/pingback/pingback-1.0#TOC5
+* PHP pingback service:
+  https://web.archive.org/web/20131211032834/http://blog.perplexedlabs.com/2009/07/15/xmlrpc-pingbacks-using-php/
+
+
+
+## Social Networks
+
+### Facebook Open Graph data
+
+You can control the information that Facebook and others display when users
+share your site. Below are just the most basic data points you might need. For
+specific content types (including "website"), see [Facebook's built-in Open
+Graph content
+templates](https://developers.facebook.com/docs/sharing/opengraph/using-objects).
+Take full advantage of Facebook's support for complex data and activity by
+following the [Open Graph
+tutorial](https://developers.facebook.com/docs/sharing/webmasters/getting-started).
+
+For a reference of Open Graph's markup and properties, you may check [Facebook's
+Open Graph Protocol reference](https://ogp.me). Finally, you can validate your
+markup with the [Facebook Object
+Debugger](https://developers.facebook.com/tools/debug/) (needs registration to
+Facebook).
+
+```html
+<meta property="fb:app_id" content="123456789">
+<meta property="og:url" content="https://www.example.com/path/to/page.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:image" content="https://www.example.com/path/to/image.jpg">
+<meta property="og:description" content="">
+<meta property="og:site_name" content="">
+<meta property="article:author" content="">
+```
+
+### Twitter Cards
+
+Twitter provides a snippet specification that serves a similar purpose to Open
+Graph. In fact, Twitter will use Open Graph when Cards is not available. You can
+read more about the various snippet formats in the
+[official Twitter Cards
+documentation](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards),
+and you can validate your markup with the [Card
+validator](https://cards-dev.twitter.com/validator) (needs registration to
+Twitter).
+
+```html
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@site_account">
+<meta name="twitter:creator" content="@individual_account">
+<meta name="twitter:url" content="https://www.example.com/path/to/page.html">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://www.example.com/path/to/image.jpg">
+```
+
+### Schema.org
+
+Google also provides a snippet specification that serves a similar purpose to
+Facebook's Open Graph or Twitter Cards. This metadata is a subset of
+[schema.org's microdata vocabulary](https://schema.org/), which covers many
+other schemas that can describe the content of your pages to search engines. For
+this reason, this metadata is more generic for SEO, notably for Google's
+search-engine, although this vocabulary is also used by Microsoft, Pinterest and
+Yandex.
+
+You can validate your markup with the [Structured Data Testing
+Tool](https://search.google.com/structured-data/testing-tool). Also, please
+note that this markup requires to add attributes to your top `html` tag.
+
+```html
+<html class="no-js" lang="" itemscope itemtype="https://schema.org/Article">
+  <head>
+
+    <link rel="author" href="">
+    <link rel="publisher" href="">
+    <meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="">
+```
+
 ## URLs
 
 ### Canonical URL
 
 Signal to search engines and others "Use this URL for this page!" Useful when
 parameters after a `#` or `?` is used to control the display state of a page.
-`http://www.example.com/cart.html?shopping-cart-open=true` can be indexed as
-the cleaner, more accurate `http://www.example.com/cart.html`.
+`https://www.example.com/cart.html?shopping-cart-open=true` can be indexed as
+the cleaner, more accurate `https://www.example.com/cart.html`.
 
 ```html
 <link rel="canonical" href="">
 ```
 
-### Official shortlink
+### Separate mobile URLs
 
-Signal to the world "This is the shortened URL to use this page!" Poorly
-supported at this time. Learn more by reading the [article about shortlinks on
-the Microformats wiki](http://microformats.org/wiki/rel-shortlink).
+If you use separate URLs for desktop and mobile users, you should consider
+helping search engine algorithms better understand the configuration on your web
+site.
+
+This can be done by adding the following annotations in your HTML pages:
+
+* on the desktop page, add the `link rel="alternate"` tag pointing to the
+  corresponding mobile URL, e.g.:
+
+  `<link rel="alternate" media="only screen and (max-width: 640px)"
+  href="https://m.example.com/page.html" >`
+
+* on the mobile page, add the `link rel="canonical"` tag pointing to the
+  corresponding desktop URL, e.g.:
+
+  `<link rel="canonical" href="https://www.example.com/page.html">`
+
+For more information please see:
+
+* https://developers.google.com/search/mobile-sites/mobile-seo/separate-urls
+
+
+## Web Apps
+
+There are a couple of meta tags that provide information about a web app when
+added to the Home Screen on iOS:
+
+* Adding `apple-mobile-web-app-capable` will make your web app chrome-less and
+  provide the default iOS app view. You can control the color scheme of the
+  default view by adding `apple-mobile-web-app-status-bar-style`.
 
 ```html
-<link rel="shortlink" href="h5bp.com">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 ```
 
-## App Stores
-
-### Install a Chrome Web Store app
-
-Users can install a Chrome app directly from your website, as long as the app
-and site have been associated via Google's Webmaster Tools. Read more on
-[Chrome Web Store's Inline Installation
-docs](https://developers.google.com/chrome/web-store/docs/inline_installation).
+* You can use `apple-mobile-web-app-title` to add a specific sites name for the
+  Home Screen icon.
 
 ```html
-<link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/APP_ID">
+<meta name="apple-mobile-web-app-title" content="">
 ```
 
-### Smart App Banners in iOS 6 Safari
+For further information please read the [official
+documentation](https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
+on Apple's site.
 
-Stop bothering everyone with gross modals advertising your entry in the App Store.
-This bit of code will unintrusively allow the user the option to download your iOS
-app, or open it with some data about the user's current state on the website.
+
+### Apple Touch Icons
+
+Apple touch icons are used as icons when a user adds your webapp to the home
+screen of an iOS devices.
+
+Though the dimensions of the icon can vary between iOS devices and versions one
+`180×180px` touch icon named `icon.png` and including the following in the
+`<head>` of the page is enough:
 
 ```html
-<meta name="apple-itunes-app" content="app-id=APP_ID,app-argument=SOME_TEXT">
+<link rel="apple-touch-icon" href="icon.png">
 ```
 
-## Google Analytics augments
+For a more comprehensive overview, please refer to Mathias' [article on Touch
+Icons](https://mathiasbynens.be/notes/touch-icons).
 
-### Google Analytics For Mobile
 
-Low-end mobile devices may not support JavaScript, same as email tracking, to tackle this issue, Google use image download as a tracker.
+### Apple Touch Startup Image
 
-All the same data that you've come to expect from your Google Analytics reports is now available for mobile websites. Simply paste their server-side code snippets (available for PHP, JSP, ASP.NET, and Perl) on each page you wish to track. Google Analytics then creates a profile for your mobile website where you can view the same kind of information that's in standard Analytics reports including visitor information and traffic sources. You'll be able to track users visiting your mobile website from both high-end "smartphones" and WAP devices. For more information on tracking hits to mobile sites, see the [server-side developer's guide](https://code.google.com/mobile/analytics/docs/web/).
+Apart from that it is possible to add start-up screens for web apps on iOS. This
+basically works by defining `apple-touch-startup-image` with an according link
+to the image. Since iOS devices have different screen resolutions it maybe
+necessary to add media queries to detect which image to load. Here is an example
+for an iPhone:
 
-### More tracking settings
-
-The [optimized Google Analytics
-snippet](https://mathiasbynens.be/notes/async-analytics-snippet) included with
-Mobile Boilerplate includes something like this:
-
-```js
-var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+```html
+<link rel="apple-touch-startup-image" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" href="img/startup.png">
 ```
 
-In case you need more settings, just extend the array literal instead of
-[`.push()`ing to the
-array](https://mathiasbynens.be/notes/async-analytics-snippet#dont-push-it)
-afterwards:
 
-```js
-var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview'], ['_setAllowAnchor', true]];
+### Chrome Mobile web apps
+
+Chrome Mobile has a specific meta tag for making apps [installable to the
+homescreen](https://developer.chrome.com/multidevice/android/installtohomescreen)
+which tries to be a more generic replacement to Apple's proprietary meta tag:
+
+```html
+<meta name="mobile-web-app-capable" content="yes">
 ```
 
-### Anonymize IP addresses
+Same applies to the touch icons:
 
-In some countries, no personal data may be transferred outside jurisdictions
-that do not have similarly strict laws (i.e. from Germany to outside the EU).
-Thus a webmaster using the Google Analytics script may have to ensure that no
-personal (trackable) data is transferred to the US. You can do that with [the
-`_gat.anonymizeIp`
-option](https://developers.google.com/analytics/devguides/collection/analyticsjs/advanced#anonymizeip).
-In use it looks like this:
-
-```js
-var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_gat._anonymizeIp'], ['_trackPageview']];
+```html
+<link rel="icon" sizes="192x192" href="highres-icon.png">
 ```
 
-### Track jQuery AJAX requests in Google Analytics
+### Theme Color
 
-An article by @JangoSteve explains how to [track jQuery AJAX requests in Google
-Analytics](http://www.alfajango.com/blog/track-jquery-ajax-requests-in-google-analytics/).
-
-Add this to `plugins.js`:
-
-```js
-/*
- * Log all jQuery AJAX requests to Google Analytics
- * See: http://www.alfajango.com/blog/track-jquery-ajax-requests-in-google-analytics/
- */
-if (typeof _gaq !== "undefined" && _gaq !== null) {
-    $(document).ajaxSend(function(event, xhr, settings){
-        _gaq.push(['_trackPageview', settings.url]);
-    });
-}
-```
-
-### Track JavaScript errors in Google Analytics
-
-Add this function after `_gaq` is defined:
-
-```js
-(function(window){
-    var undefined,
-        link = function (href) {
-            var a = window.document.createElement('a');
-            a.href = href;
-            return a;
-        };
-    window.onerror = function (message, file, row) {
-        var host = link(file).hostname;
-        _gaq.push([
-            '_trackEvent',
-            (host == window.location.hostname || host == undefined || host == '' ? '' : 'external ') + 'error',
-            message, file + ' LINE: ' + row, undefined, undefined, true
-        ]);
-    };
-}(window));
-```
-
-### Track page scroll
-
-Add this function after `_gaq` is defined:
-
-```js
-$(function(){
-    var isDuplicateScrollEvent,
-        scrollTimeStart = new Date,
-        $window = $(window),
-        $document = $(document),
-        scrollPercent;
-
-    $window.scroll(function() {
-        scrollPercent = Math.round(100 * ($window.height() + $window.scrollTop())/$document.height());
-        if (scrollPercent > 90 && !isDuplicateScrollEvent) { //page scrolled to 90%
-            isDuplicateScrollEvent = 1;
-            _gaq.push(['_trackEvent', 'scroll',
-                'Window: ' + $window.height() + 'px; Document: ' + $document.height() + 'px; Time: ' + Math.round((new Date - scrollTimeStart )/1000,1) + 's',
-                undefined, undefined, true
-            ]);
-        }
-    });
-});
-```
-
-### Add to home screen plugins for mobile web app installation
-
-There are various JS plugins available to help facilitate installing mobile web apps
-to the home screen.
-
- * [Mobile Bookmark Bubble](https://code.google.com/p/mobile-bookmark-bubble/) (Mobile Safari only).
- * [Add to Home Screen](https://github.com/cubiq/add-to-homescreen) (Mobile Safari only).
- * [jQuery Mobile Bookmark Bubble](https://github.com/okamototk/jqm-mobile-bookmark-bubble) (Mobile Safari, Android, BlackBerry).
- * [Concierge](https://github.com/alexgibson/concierge) (Firefox OS, Firefox for Android).
-
-## Theme Color
-
-You can add the [`theme-color` meta extension](https://github.com/whatwg/meta-theme-color)
-in the `<head>` of your pages to suggest the color that browsers and
-OSes should use if they customize the display of individual pages in
-their UIs with varying colors.
+You can add the [`theme-color` meta
+extension](https://html.spec.whatwg.org/multipage/semantics.html#meta-theme-color)
+in the `<head>` of your pages to suggest the color that browsers and OSes should
+use if they customize the display of individual pages in their UIs with varying
+colors.
 
 ```html
 <meta name="theme-color" content="#ff69b4">
@@ -347,31 +587,19 @@ their UIs with varying colors.
 
 The `content` attribute extension can take any valid CSS color.
 
-Currently, the `theme-color` meta extension is supported by [Chrome 39+
-for Android Lollipop](http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android)
-and [Firefox OS 2.1+](https://twitter.com/ahmednefzaoui/status/492344698493997057).
-
-## Miscellaneous
-
-* Use [HTML5
-  polyfills](https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills).
-
-* If you're building a web app you may want [native style momentum scrolling in
-  iOS5](http://www.johanbrook.com/articles/native-style-momentum-scrolling-to-arrive-in-ios-5/) using
-  `-webkit-overflow-scrolling: touch`.
-
-* Automatic telephone number detection prevention for iOS and Android using
-  `<meta name="format-detection" content="telephone=no">`.
-  [Safari HTML Reference Supported Meta Tags](https://developer.apple.com/library/safari/documentation/appleapplications/reference/SafariHTMLRef/Articles/MetaTags.html)
-
-* Avoid development/stage websites "leaking" into SERPs (search engine results
-  page) by [implementing X-Robots-tag
-  headers](https://github.com/h5bp/html5-boilerplate/issues/804).
-
-* Screen readers currently have less-than-stellar support for HTML5 but the JS
-  script [accessifyhtml5.js](https://github.com/yatil/accessifyhtml5.js) can
-  help increase accessibility by adding ARIA roles to HTML5 elements.
+Currently, the `theme-color` meta extension is supported by [Chrome 39+ for
+Android
+Lollipop](https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android).
 
 
-*Many thanks to [Brian Blakely](https://github.com/brianblakely) for
-contributing much of this information.*
+## security.txt
+
+When security risks in web services are discovered by users they often lack the
+channels to disclose them properly. As a result, security issues may be left
+unreported.
+
+Security.txt defines a standard to help organizations define the process for
+users to disclose security vulnerabilities securely. Include a text file on your
+server at `.well-known/security.txt` with the relevant contact details.
+
+Check [https://securitytxt.org/](https://securitytxt.org/) for more details.
