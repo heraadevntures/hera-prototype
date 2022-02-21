@@ -33,7 +33,7 @@ import PhotoCameraRoundedIcon from "@material-ui/icons/PhotoCameraRounded";const
     <div className={classes.root}>
       <Grid container>
         <Grid item xs={12}>
-          <h5>Capture your image</h5>
+          <h5>Capture your video</h5>
           {source &&
             <Box display="flex" justifyContent="center" border={1} className={classes.imgBox}>
               <img src={source} alt={"snap"} className={classes.img}></img>
